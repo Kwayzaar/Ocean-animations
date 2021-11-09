@@ -1,11 +1,13 @@
 *, *::before, *::after{
-  font-family: 'Open sans', 'sans-serif'
+  font-family: 'Open sans', 'sans-serif';
+  user-select: none;
 }
 
 body{
   margin: 0;
 }
 
+/* logo with animation */
 .logo {
   position: absolute;
   top:.5rem;
@@ -44,6 +46,43 @@ body{
   }
 }
 
+.trash-container {
+  position: absolute;
+  width: 100%;
+  height: 50vh;
+  bottom: 0;
+  left: 0;
+}
+
+.trash {
+  position: absolute;
+  opacity: .75;
+  animation: bob 2s ease-in-out infinite alternate;
+}
+
+@keyframes bob {
+  from {
+    transform: rotate(var(--rotation)) translateY(1vh)
+  }
+  to {
+    transform: rotate(calc(var(--rotation) + 10deg)) translateY(0);
+  }
+}
+
+/* money div */
+.money {
+  position: absolute;
+  left: 50vmin;
+  bottom: 50vh;
+  font-size: 6vmin;
+  z-index: 100;
+  color: white;
+  margin: 0;
+  opacity: .5;
+  text-shadow: 0 0 5px hsl(0, 0%, 0%, .5);
+}
+
+/* all below handles handles background image and animation */
 :root {
   --v1: #be91c6;
   --v2: #8a65cc;
